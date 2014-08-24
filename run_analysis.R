@@ -3,6 +3,7 @@ data.dir<- './UCI HAR Dataset'
 data.file<- './original-dataset.zip'
 tidy.data<- './tidy UCI HAR.csv'
 mean.data<- './mean UCI HAR.txt'
+mean.data1<- './mean UCI HAR.csv'
 library(reshape2)
 
 ## Download file if needed
@@ -69,3 +70,4 @@ data.mean<- aggregate(full.data,
 data.mean[,3]=NULL
 data.mean[,3]=NULL
 write.table(data.mean, mean.data, row.name=F)
+write.csv(data.mean, mean.data1, row.name=T)
